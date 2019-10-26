@@ -27,18 +27,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        Fundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuSair = new javax.swing.JMenu();
+        jRadioButtonMenuItemCadastro = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItemRemocaoC = new javax.swing.JRadioButtonMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jRadioButtonMenuItemFuncionarios = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItemVoltar = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItemSair = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Fundo.png"))); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Fundo.png"))); // NOI18N
 
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
@@ -47,18 +52,61 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Clientes");
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Funcionários");
-        jMenuBar1.add(jMenu4);
-
-        jMenuSair.setText("Sair");
-        jMenuSair.addActionListener(new java.awt.event.ActionListener() {
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuSairActionPerformed(evt);
+                jMenu3ActionPerformed(evt);
             }
         });
-        jMenuBar1.add(jMenuSair);
+
+        jRadioButtonMenuItemCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemCadastro.setSelected(true);
+        jRadioButtonMenuItemCadastro.setText("Cadastrar Clientes");
+        jRadioButtonMenuItemCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemCadastroActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jRadioButtonMenuItemCadastro);
+
+        jRadioButtonMenuItemRemocaoC.setSelected(true);
+        jRadioButtonMenuItemRemocaoC.setText("Remover Clientes");
+        jMenu3.add(jRadioButtonMenuItemRemocaoC);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Mais+");
+
+        jRadioButtonMenuItemFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemFuncionarios.setSelected(true);
+        jRadioButtonMenuItemFuncionarios.setText("Funcionários");
+        jRadioButtonMenuItemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemFuncionariosActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jRadioButtonMenuItemFuncionarios);
+
+        jRadioButtonMenuItemVoltar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemVoltar.setSelected(true);
+        jRadioButtonMenuItemVoltar.setText("Voltar");
+        jRadioButtonMenuItemVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemVoltarActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jRadioButtonMenuItemVoltar);
+
+        jRadioButtonMenuItemSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemSair.setSelected(true);
+        jRadioButtonMenuItemSair.setText("Sair");
+        jRadioButtonMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItemSairActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jRadioButtonMenuItemSair);
+
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -66,21 +114,48 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Fundo, javax.swing.GroupLayout.PREFERRED_SIZE, 511, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Fundo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(516, 319));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSairActionPerformed
-        //Tela principal sair
-        break;
-    }//GEN-LAST:event_jMenuSairActionPerformed
+    private void jRadioButtonMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemSairActionPerformed
+        // Sair do programa
+        System.exit(0);
+    }//GEN-LAST:event_jRadioButtonMenuItemSairActionPerformed
+
+    private void jRadioButtonMenuItemVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemVoltarActionPerformed
+        // Voltar para tela de login
+        TelaLogin t = new TelaLogin();
+        t.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jRadioButtonMenuItemVoltarActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+  
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jRadioButtonMenuItemCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemCadastroActionPerformed
+        // Ir para tela de Cadastro de Clientes
+         CadastroCliente te = new CadastroCliente();
+                     te.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jRadioButtonMenuItemCadastroActionPerformed
+
+    private void jRadioButtonMenuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemFuncionariosActionPerformed
+        //Tela funcionarios
+        CadastroFuncionarios cad= new CadastroFuncionarios();
+        cad.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jRadioButtonMenuItemFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,12 +193,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel Fundo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuSair;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemCadastro;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemFuncionarios;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemRemocaoC;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemSair;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemVoltar;
     // End of variables declaration//GEN-END:variables
 }

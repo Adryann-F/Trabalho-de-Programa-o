@@ -76,7 +76,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonEntrar);
-        jButtonEntrar.setBounds(150, 210, 63, 23);
+        jButtonEntrar.setBounds(170, 220, 70, 23);
 
         jButtonSair.setText("Sair");
         jButtonSair.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonSair);
-        jButtonSair.setBounds(310, 210, 70, 23);
+        jButtonSair.setBounds(260, 220, 70, 23);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Boneco.png"))); // NOI18N
         getContentPane().add(jLabel3);
