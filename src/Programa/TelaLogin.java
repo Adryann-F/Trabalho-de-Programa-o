@@ -119,7 +119,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarActionPerformed
     //Metodo para Ativar o botão
     public void Entrar(){
-    if(jTextFieldUsuario.getText().equals("Adryann")&&jPasswordFieldSenha.getText().equals("12345")){
+    if(jTextFieldUsuario.getText().equals("admin")&&jPasswordFieldSenha.getText().equals("admin")){
         TelaPrincipal tela = new TelaPrincipal();
                       tela.setVisible(true);
         dispose();

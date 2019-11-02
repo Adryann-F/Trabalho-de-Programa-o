@@ -44,8 +44,12 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextFieldSalarioFuncio = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabelFuncionarioSexo = new javax.swing.JLabel();
+        jTextFieldFuncionarioSexo = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabelFuncionarioEnd = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         Fundo = new javax.swing.JLabel();
 
         jTextField6.setText("jTextField6");
@@ -62,7 +66,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Idade:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 190, 50, 20);
+        jLabel4.setBounds(160, 210, 50, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -102,7 +106,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldIdadeFuncio);
-        jTextFieldIdadeFuncio.setBounds(60, 190, 40, 20);
+        jTextFieldIdadeFuncio.setBounds(200, 210, 40, 20);
         getContentPane().add(jTextFieldContFuncio);
         jTextFieldContFuncio.setBounds(80, 130, 160, 20);
 
@@ -134,6 +138,13 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(210, 250, 90, 23);
 
+        jLabelFuncionarioSexo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelFuncionarioSexo.setText("Sexo:");
+        getContentPane().add(jLabelFuncionarioSexo);
+        jLabelFuncionarioSexo.setBounds(250, 210, 40, 20);
+        getContentPane().add(jTextFieldFuncionarioSexo);
+        jTextFieldFuncionarioSexo.setBounds(290, 210, 90, 20);
+
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(51, 255, 0));
         jButton2.setText("Salvar");
@@ -150,6 +161,13 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(360, 250, 90, 23);
+
+        jLabelFuncionarioEnd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelFuncionarioEnd.setText("Endereço:");
+        getContentPane().add(jLabelFuncionarioEnd);
+        jLabelFuncionarioEnd.setBounds(20, 190, 80, 20);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(80, 190, 300, 20);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoFuncio.jpg"))); // NOI18N
         getContentPane().add(Fundo);
@@ -226,11 +244,15 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelFuncionarioEnd;
+    private javax.swing.JLabel jLabelFuncionarioSexo;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextFieldCPFFuncio;
     private javax.swing.JTextField jTextFieldCargoFuncio;
     private javax.swing.JTextField jTextFieldContFuncio;
     private javax.swing.JTextField jTextFieldContaFuncio;
+    private javax.swing.JTextField jTextFieldFuncionarioSexo;
     private javax.swing.JTextField jTextFieldIdadeFuncio;
     private javax.swing.JTextField jTextFieldNomeFuncio;
     private javax.swing.JTextField jTextFieldSalarioFuncio;

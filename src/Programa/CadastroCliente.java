@@ -39,6 +39,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         jButtonNovo = new javax.swing.JButton();
         jButtonancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jTextFieldClienteSexo = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        FundoCadastro = new javax.swing.JLabel();
         jTextFieldPesquisarClienteNome = new javax.swing.JTextField();
         jTextFieldPesquisarClienteCPF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -47,7 +50,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        FundoCadastro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro  de Clientes");
@@ -109,6 +111,17 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6.setText("Pesquisar:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 230, 110, 30);
+        getContentPane().add(jTextFieldClienteSexo);
+        jTextFieldClienteSexo.setBounds(170, 140, 140, 20);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Sexo:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(130, 140, 50, 20);
+
+        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
+        getContentPane().add(FundoCadastro);
+        FundoCadastro.setBounds(-40, -130, 620, 670);
         getContentPane().add(jTextFieldPesquisarClienteNome);
         jTextFieldPesquisarClienteNome.setBounds(60, 260, 240, 20);
         getContentPane().add(jTextFieldPesquisarClienteCPF);
@@ -156,10 +169,6 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 310, 560, 350);
-
-        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
-        getContentPane().add(FundoCadastro);
-        FundoCadastro.setBounds(-40, -130, 620, 670);
 
         setSize(new java.awt.Dimension(558, 465));
         setLocationRelativeTo(null);
@@ -222,9 +231,11 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextFieldCPFCliente;
+    private javax.swing.JTextField jTextFieldClienteSexo;
     private javax.swing.JTextField jTextFieldContatoCliente;
     private javax.swing.JTextField jTextFieldNomeCliente;
     private javax.swing.JTextField jTextFieldPesquisarClienteCPF;

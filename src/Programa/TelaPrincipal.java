@@ -31,6 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jRadioButtonMenuItemCadastro = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItemRemocaoC = new javax.swing.JRadioButtonMenuItem();
@@ -48,7 +49,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Quartos");
+        jMenu2.setText("Agendamentos");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("Quartos");
+        jMenu2.add(jRadioButtonMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Clientes");
@@ -199,6 +205,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemCadastro;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemFuncionarios;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemRemocaoC;
