@@ -5,6 +5,7 @@
  */
 package Programa;
 
+import Controle.ControleLogin;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -14,11 +15,15 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    private final ControleLogin controle;
+
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
         initComponents();
+        //iniciar class de controle
+        controle = new ControleLogin(this);
     }
 
     /**
@@ -32,8 +37,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
         Login = new javax.swing.JLabel();
         Senha = new javax.swing.JLabel();
-        jTextFieldUsuario = new javax.swing.JTextField();
-        jPasswordFieldSenha = new javax.swing.JPasswordField();
+        jTextUsuario = new javax.swing.JTextField();
+        jSenha = new javax.swing.JPasswordField();
         jButtonEntrar = new javax.swing.JButton();
         jButtonSair = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -53,16 +58,16 @@ public class TelaLogin extends javax.swing.JFrame {
         Senha.setText("Senha:");
         getContentPane().add(Senha);
         Senha.setBounds(170, 140, 60, 17);
-        getContentPane().add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(220, 110, 120, 20);
+        getContentPane().add(jTextUsuario);
+        jTextUsuario.setBounds(220, 110, 120, 20);
 
-        jPasswordFieldSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+        jSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jPasswordFieldSenhaKeyPressed(evt);
+                jSenhaKeyPressed(evt);
             }
         });
-        getContentPane().add(jPasswordFieldSenha);
-        jPasswordFieldSenha.setBounds(220, 140, 120, 20);
+        getContentPane().add(jSenha);
+        jSenha.setBounds(220, 140, 120, 20);
 
         jButtonEntrar.setText("Entrar");
         jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -103,29 +108,32 @@ public class TelaLogin extends javax.swing.JFrame {
        System.exit(0);
     }//GEN-LAST:event_jButtonSairActionPerformed
 
-    private void jPasswordFieldSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaKeyPressed
+    private void jSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSenhaKeyPressed
         // Enter com teclado
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
-         Entrar();  
-    }//GEN-LAST:event_jPasswordFieldSenhaKeyPressed
+         entrar();  
+    }//GEN-LAST:event_jSenhaKeyPressed
 
     private void jButtonEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonEntrarKeyPressed
         // TODO add your handling code here: 
     }//GEN-LAST:event_jButtonEntrarKeyPressed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        // Botão entrar.
-        Entrar();
+        System.out.println(jTextUsuario.getText());
+    // Botão entrar.
+        entrar();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
     //Metodo para Ativar o botão
-    public void Entrar(){
-    if(jTextFieldUsuario.getText().equals("admin")&&jPasswordFieldSenha.getText().equals("admin")){
+    public void entrar(){
+    if(jTextUsuario.getText().equals("admin")&&jSenha.getText().equals("admin")){
         TelaPrincipal tela = new TelaPrincipal();
+        //mensagem do controller
+        this.controle.tarefas();
                       tela.setVisible(true);
         dispose();
     }                                              
         else{
-            JOptionPane.showMessageDialog(rootPane, "Acesso Negado!!");
+            JOptionPane.showMessageDialog(rootPane, "Usuario ou senha invalidos!!");
         }
     }
     /**
@@ -156,10 +164,8 @@ public class TelaLogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaLogin().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TelaLogin().setVisible(true);
         });
     }
     //Metodo para Entrar na tela de login.
@@ -171,7 +177,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordFieldSenha;
-    private javax.swing.JTextField jTextFieldUsuario;
+    private javax.swing.JPasswordField jSenha;
+    private javax.swing.JTextField jTextUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void exibeMensagem(String mensagem) {
+     JOptionPane.showMessageDialog(this, mensagem);
+    }
 }
