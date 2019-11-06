@@ -8,6 +8,8 @@ package Programa;
 import Controle.ControleLogin;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -61,6 +63,11 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jTextUsuario);
         jTextUsuario.setBounds(220, 110, 120, 20);
 
+        jSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSenhaActionPerformed(evt);
+            }
+        });
         jSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jSenhaKeyPressed(evt);
@@ -123,6 +130,10 @@ public class TelaLogin extends javax.swing.JFrame {
     // Botão entrar.
         entrar();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void jSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSenhaActionPerformed
     //Metodo para Ativar o botão
     public void entrar(){
     if(jTextUsuario.getText().equals("admin")&&jSenha.getText().equals("admin")){
@@ -184,4 +195,21 @@ public class TelaLogin extends javax.swing.JFrame {
     public void exibeMensagem(String mensagem) {
      JOptionPane.showMessageDialog(this, mensagem);
     }
+
+    public JPasswordField getjSenha() {
+        return jSenha;
+    }
+
+    public void setjSenha(JPasswordField jSenha) {
+        this.jSenha = jSenha;
+    }
+
+    public JTextField getjTextUsuario() {
+        return jTextUsuario;
+    }
+
+    public void setjTextUsuario(JTextField jTextUsuario) {
+        this.jTextUsuario = jTextUsuario;
+    }
+    
 }
