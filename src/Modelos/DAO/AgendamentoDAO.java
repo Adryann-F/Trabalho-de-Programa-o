@@ -1,0 +1,66 @@
+package Modelos.DAO;
+
+import Modelos.Agendamento;
+import java.util.ArrayList;
+
+public class AgendamentoDAO {
+    
+    //Insere um agendamento dentro do banco de dados
+    public void inserir(Agendamento agendamento){
+          
+        if(agendamento.getId() == 0){
+            agendamento.setId(proximoId());
+            Banco.agendamento.add(agendamento);
+        }  
+    }
+    
+     // Atualiza um Objeto no banco de dados
+    public boolean update(Agendamento agendamento){
+        
+        for (int i = 0; i < Banco.agendamento.size(); i++) {
+            if(idSaoIguais(Banco.agendamento.get(i),agendamento)){
+                Banco.agendamento.set(i, agendamento);
+                return true;
+            }
+        }
+        return false;      
+
+    }
+    
+     // Deleta um objeto do banco de dados pelo id do agendamento passado
+    public boolean delete(Agendamento agendamento){
+        for (Agendamento agendamentoLista : Banco.agendamento) {
+            if(idSaoIguais(agendamentoLista,agendamento)){
+                Banco.agendamento.remove(agendamentoLista);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+     // Retorna um arraylist com todos os agendamentos do banco de dados
+    public ArrayList<Agendamento> selectAll(){
+        return Banco.agendamento;
+    }
+    
+    //Compara se dois objetos tem a propriedade id igual
+    private boolean idSaoIguais(Agendamento agendamento, Agendamento agendamentoAComparar) {
+        return agendamento.getId() ==  agendamentoAComparar.getId();
+    }
+    
+    private int proximoId(){
+        
+        int maiorId = 0;
+        
+        for (Agendamento agendamento : Banco.agendamento) {           
+           int id = agendamento.getId();
+            
+            if(maiorId < id){
+                maiorId = id;
+            }   
+        }
+        
+        return maiorId + 1;
+    }
+    
+}
