@@ -24,7 +24,7 @@ public class Banco {
         agendamento = new ArrayList<>();
         
         //criando elementos
-                                                       
+        Funcionarios superusuario = new Funcionarios("admin", "30364033454", null, 0, "", "Super Usuario", "60484472305");                                               
         Funcionarios usuario1 = new Funcionarios("Ana", "30364033454", "986873546", 23, "F", "Atendente", "admin");
         Funcionarios usuario2 = new Funcionarios("João", "40480434544", "986373564", 24, "M", "Estagiario", "admin");
          //(String nome, String cpf, String contato, int idade, String sexo)

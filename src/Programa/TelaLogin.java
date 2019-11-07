@@ -6,6 +6,7 @@
 package Programa;
 
 import Controle.ControleLogin;
+import Modelos.DAO.Banco;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -26,6 +27,7 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
         //iniciar class de controle
         controle = new ControleLogin(this);
+        Banco.inicia();
     }
 
     /**
@@ -126,7 +128,6 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarKeyPressed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        System.out.println(jTextUsuario.getText());
     // Botão entrar.
         entrar();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
@@ -136,16 +137,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jSenhaActionPerformed
     //Metodo para Ativar o botão
     public void entrar(){
-    if(jTextUsuario.getText().equals("admin")&&jSenha.getText().equals("admin")){
-        TelaPrincipal tela = new TelaPrincipal();
-        //mensagem do controller
-        this.controle.tarefas();
-                      tela.setVisible(true);
-        dispose();
-    }                                              
-        else{
-            JOptionPane.showMessageDialog(rootPane, "Usuario ou senha invalidos!!");
-        }
+        this.controle.entradadosistema();
     }
     /**
      * @param args the command line arguments

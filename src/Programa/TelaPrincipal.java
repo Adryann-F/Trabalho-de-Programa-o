@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Programa;
+
+import Controle.ControleTelaPrincipal;
 
 /**
  *
@@ -11,13 +8,15 @@ package Programa;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    private final ControleTelaPrincipal controle;
+
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
+     this.controle = new ControleTelaPrincipal(this);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,9 +150,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItemCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemCadastroActionPerformed
         // Ir para tela de Cadastro de Clientes
-         CadastroCliente te = new CadastroCliente();
-                     te.setVisible(true);
-        dispose();
+       this.controle.irParaCadastroCliente();
     }//GEN-LAST:event_jRadioButtonMenuItemCadastroActionPerformed
 
     private void jRadioButtonMenuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemFuncionariosActionPerformed
