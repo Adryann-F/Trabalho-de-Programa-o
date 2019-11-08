@@ -36,7 +36,7 @@ package Modelos;
     }
     
 
-    public String getNome() {
+    public  String getNome() {
         return nome;
     }
 
@@ -90,5 +90,7 @@ package Modelos;
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+   
    
 }

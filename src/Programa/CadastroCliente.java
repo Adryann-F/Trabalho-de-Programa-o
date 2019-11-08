@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Programa;
 
+import Controle.ControleCCliente;
 /**
  *
  * @author Adryann
  */
 public class CadastroCliente extends javax.swing.JFrame {
 
+    private final ControleCCliente controle;
     /**
      * Creates new form CadastroCliente
      */
     public CadastroCliente() {
         initComponents();
+        this.controle = new ControleCCliente(this);
         
     }
 
@@ -42,7 +40,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextFieldClienteSexo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        FundoCadastro = new javax.swing.JLabel();
         jTextFieldPesquisarClienteNome = new javax.swing.JTextField();
         jTextFieldPesquisarClienteCPF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -51,6 +48,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        FundoCadastro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro  de Clientes");
@@ -119,10 +117,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel9.setText("Sexo:");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(130, 140, 50, 20);
-
-        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
-        getContentPane().add(FundoCadastro);
-        FundoCadastro.setBounds(-40, -130, 620, 670);
         getContentPane().add(jTextFieldPesquisarClienteNome);
         jTextFieldPesquisarClienteNome.setBounds(60, 260, 240, 20);
         getContentPane().add(jTextFieldPesquisarClienteCPF);
@@ -150,16 +144,18 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Contato", "Cpf"
+                "Nome", "Contato", "Cpf", "Idade", "Sexo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -170,6 +166,10 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 310, 560, 350);
+
+        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
+        getContentPane().add(FundoCadastro);
+        FundoCadastro.setBounds(-40, -130, 620, 670);
 
         setSize(new java.awt.Dimension(558, 465));
         setLocationRelativeTo(null);

@@ -8,7 +8,11 @@ public class Cliente extends Pessoa{
 
     public Cliente(String nome, String cpf, String contato, int idade) {
         super(nome, cpf, contato, idade);
-    }
-   
+    }  
+    
+  @Override
+  public String toString(){
+        return getNome();           
+  }
    
 }

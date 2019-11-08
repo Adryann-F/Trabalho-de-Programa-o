@@ -24,9 +24,9 @@ public class Banco {
         agendamento = new ArrayList<>();
         
         //criando elementos
-        Funcionarios superusuario = new Funcionarios("admin", "30364033454", null, 0, "", "Super Usuario", "60484472305");                                               
+        Funcionarios usuario0 = new Funcionarios("admin", "30364033454", null, 0, "", "Super Usuario", "604844");                                               
         Funcionarios usuario1 = new Funcionarios("Ana", "30364033454", "986873546", 23, "F", "Atendente", "admin");
-        Funcionarios usuario2 = new Funcionarios("João", "40480434544", "986373564", 24, "M", "Estagiario", "admin");
+        Funcionarios usuario2 = new Funcionarios("João", "40480434544", "986373564", 24, "M", "Camareiro", "admin");
          //(String nome, String cpf, String contato, int idade, String sexo)
         Cliente cliente1 = new Cliente("Pedro", "605244334", "9988123454", 37, "M");
         Cliente cliente2 = new Cliente("Paula", "605534534", "998846537", 21, "F");
@@ -44,10 +44,10 @@ public class Banco {
         Serviços servico5 = new Serviços(5, "Café", 10);
         Serviços servico6 = new Serviços(6, "Camareira", 3);
 
-        Agendamento agendamento1 = new Agendamento(1, cliente1, servico2, 30, "14/07/2020 09:30");
-        Agendamento agendamento2 = new Agendamento(2, cliente3, servico4, 40, "14/07/2020 10:00");
-        Agendamento agendamento3 = new Agendamento(3, cliente4, servico1, 18, "14/07/2020 10:30");
-        
+        Agendamento agendamento1 = new Agendamento(1, cliente1, servico2, 30, "02/01/2020 09:30");
+        Agendamento agendamento2 = new Agendamento(2, cliente3, servico4, 40, "14/01/2020 10:00");
+        Agendamento agendamento3 = new Agendamento(3, cliente4, servico1, 18, "17/02/2020 10:30");
+         
         //Adiciona Elementos na lista
         usuario.add(usuario1);
         usuario.add(usuario2);

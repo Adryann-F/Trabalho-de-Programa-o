@@ -29,8 +29,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Fundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuAgendamento = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jRadioButtonMenuItemCadastro = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItemRemocaoC = new javax.swing.JRadioButtonMenuItem();
@@ -48,13 +48,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Agendamentos");
+        jMenu4.setText("Agendamentos");
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Quartos");
-        jMenu2.add(jRadioButtonMenuItem1);
+        jMenuAgendamento.setText("Fazer Agendamento");
+        jMenuAgendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAgendamentoActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuAgendamento);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu4);
 
         jMenu3.setText("Clientes");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
@@ -155,10 +159,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItemFuncionariosActionPerformed
         //Tela funcionarios
-        CadastroFuncionarios cad= new CadastroFuncionarios();
-        cad.setVisible(true);
-        dispose();
+       this.controle.irParaFuncionarios();
     }//GEN-LAST:event_jRadioButtonMenuItemFuncionariosActionPerformed
+
+    private void jMenuAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendamentoActionPerformed
+        //Ir para o agendamento
+        this.controle.irParaAgendamento();
+    }//GEN-LAST:event_jMenuAgendamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,11 +205,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fundo;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuItem jMenuAgendamento;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemCadastro;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemFuncionarios;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemRemocaoC;

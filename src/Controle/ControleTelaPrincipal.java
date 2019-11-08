@@ -2,6 +2,8 @@ package Controle;
 
 
 import Programa.CadastroCliente;
+import Programa.CadastroFuncionarios;
+import Programa.TelaAgendamento;
 import Programa.TelaPrincipal;
 public class ControleTelaPrincipal {
     private final TelaPrincipal view;
@@ -18,5 +20,14 @@ public class ControleTelaPrincipal {
     Ccliente.setVisible(true);
     this.view.dispose();
     }
-    
+    public void irParaAgendamento(){
+    TelaAgendamento agendar = new TelaAgendamento();
+    agendar.setVisible(true);
+    this.view.dispose();
+    }
+    public void irParaFuncionarios(){
+    CadastroFuncionarios funcionario = new CadastroFuncionarios();
+    funcionario.setVisible(true);
+    this.view.dispose(); 
+    }
 }
