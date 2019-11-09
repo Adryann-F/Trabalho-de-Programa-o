@@ -37,7 +37,7 @@ public class Banco {
         Cliente cliente7 = new Cliente("Sandra", "39394493934", "912211934", 35, "F");
         
         
-        Serviços servico1 = new Serviços(1, "Pernoite", 18);
+        Serviços servico1 = new Serviços(1, "Pernoite", 20);
         Serviços servico2 = new Serviços(2, "Diaria", 30);
         Serviços servico3 = new Serviços(3, "Refeições", 15);
         Serviços servico4 = new Serviços(4, "Sala principal", 25);

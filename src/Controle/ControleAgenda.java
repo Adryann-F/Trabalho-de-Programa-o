@@ -46,4 +46,19 @@ public class ControleAgenda {
      //Mostrar 
      helper.preencherServicos(servicos);
     }
+    
+    public void atualizaValor(){
+    Serviços servico =  helper.obterServicos();
+    helper.mostrarValor(servico.getValor());
+    }
+    
+    public void agendar(){
+    //pegar o agendamento 
+    Agendamento agendamento = helper.obterModelo();
+    //salvar o agendamento 
+    new AgendamentoDAO().inserir(agendamento);
+    //atualizar tabela
+    atualizaTabela();
+    helper.limparTela();
+    }
 }

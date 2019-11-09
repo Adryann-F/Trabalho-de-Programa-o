@@ -4,14 +4,15 @@ package Controle.Helper;
 import Modelos.Funcionarios;
 import Programa.TelaLogin;
 //controlar a interação das telas
-public class LoginHelper {
+public class LoginHelper implements Helper{
     //tela login
     private final TelaLogin view;
 //construtor
     public LoginHelper(TelaLogin view) {
         this.view = view;
     }
-    public Funcionarios obterUsuario(){
+    @Override
+    public Funcionarios obterModelo(){
       //pegar o usuario, pesquisar no banco, sverificar os dados
     String nome = view.getjTextUsuario().getText();
     String senha = view.getjSenha().getText();
@@ -26,6 +27,7 @@ public class LoginHelper {
     view.getjSenha().setText(senha);
     }
     //limpar  tela
+    @Override
     public void limparTela(){
     view.getjTextUsuario().setText(null);
     view.getjSenha().setText(null);

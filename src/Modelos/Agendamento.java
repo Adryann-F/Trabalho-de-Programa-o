@@ -25,7 +25,7 @@ public class Agendamento {
             Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    //Contrutor para criar o agendamento com observações
     public Agendamento(int id, Cliente cliente, Serviços serviço, float valor, Date data, String observacao) {
         this.id = id;
         this.cliente = cliente;

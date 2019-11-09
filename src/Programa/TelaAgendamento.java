@@ -7,7 +7,10 @@ package Programa;
 
 import Controle.ControleAgenda;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -64,7 +67,7 @@ public class TelaAgendamento extends javax.swing.JFrame {
 
         Cadeçalho.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Cadeçalho.setText("Agendamentos");
-        getContentPane().add(Cadeçalho, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 180, 30));
+        getContentPane().add(Cadeçalho, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 180, 30));
 
         AClienteC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AClienteC.setText("Cliente:");
@@ -86,6 +89,11 @@ public class TelaAgendamento extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 100, -1));
 
+        jComboBoxservico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxservicoItemStateChanged(evt);
+            }
+        });
         jComboBoxservico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxservicoActionPerformed(evt);
@@ -97,6 +105,12 @@ public class TelaAgendamento extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Data:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 50, 20));
+
+        AValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AValorActionPerformed(evt);
+            }
+        });
         getContentPane().add(AValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 90, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 0, 0));
@@ -155,7 +169,12 @@ public class TelaAgendamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+     if(!"".equals(this.AData.getText()) && !"".equals(this.AValor.getText())){
+        this.controle.agendar();
+     }else{
+       exibeMensagem("Está faltando algum dado!!");  
+     }
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -172,6 +191,14 @@ public class TelaAgendamento extends javax.swing.JFrame {
     private void jComboBoxClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxClienteActionPerformed
+
+    private void AValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AValorActionPerformed
+    //Usada para que cada vez que o serviço for auterado o valo seja alterado tambem 
+    private void jComboBoxservicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxservicoItemStateChanged
+        this.controle.atualizaValor();
+    }//GEN-LAST:event_jComboBoxservicoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -234,8 +261,13 @@ public class TelaAgendamento extends javax.swing.JFrame {
      this.controle.atualizaTabela();
      this.controle.atualizaClientes();
      this.controle.atualizaServiços();
+     this.controle.atualizaValor();
     }
-
+    
+     public void exibeMensagem(String mensagem) {
+     JOptionPane.showMessageDialog(this, mensagem);
+    }
+    
     public JTable getTabeladeAgendamentos() {
         return TabeladeAgendamentos;
     }
@@ -258,6 +290,38 @@ public class TelaAgendamento extends javax.swing.JFrame {
 
     public void setjComboBoxservico(JComboBox<String> jComboBoxservico) {
         this.jComboBoxservico = jComboBoxservico;
+    }
+
+    public JTextField getAValor() {
+        return AValor;
+    }
+
+    public void setAValor(JTextField AValor) {
+        this.AValor = AValor;
+    }
+
+    public JTextField getAData() {
+        return AData;
+    }
+
+    public void setAData(JTextField AData) {
+        this.AData = AData;
+    }
+
+    public JTextField getAId() {
+        return AId;
+    }
+
+    public void setAId(JTextField AId) {
+        this.AId = AId;
+    }
+
+    public JTextArea getAObservações() {
+        return AObservações;
+    }
+
+    public void setAObservações(JTextArea AObservações) {
+        this.AObservações = AObservações;
     }
     
 }

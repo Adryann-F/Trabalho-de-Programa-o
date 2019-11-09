@@ -18,7 +18,7 @@ public class ControleLogin {
     } 
     public void entradadosistema(){
         //pegar ususario
-        Funcionarios funcionario = helpe.obterUsuario();
+        Funcionarios funcionario = helpe.obterModelo();
         //Pesquisa de ususarios
         FuncionarioDAO userDAO = new FuncionarioDAO();
         Funcionarios funcionarioautenticado = userDAO.selectPorNomeESenha(funcionario);
