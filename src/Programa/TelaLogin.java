@@ -62,6 +62,12 @@ public class TelaLogin extends javax.swing.JFrame {
         Senha.setText("Senha:");
         getContentPane().add(Senha);
         Senha.setBounds(170, 140, 60, 17);
+
+        jTextUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextUsuarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextUsuario);
         jTextUsuario.setBounds(220, 110, 120, 20);
 
@@ -135,10 +141,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jSenhaActionPerformed
-    //Metodo para Ativar o botão
-    public void entrar(){
-        this.controle.entradadosistema();
-    }
+
+    private void jTextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextUsuarioActionPerformed
+   
     /**
      * @param args the command line arguments
      */
@@ -183,7 +190,12 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField jSenha;
     private javax.swing.JTextField jTextUsuario;
     // End of variables declaration//GEN-END:variables
-
+    
+     //Metodo para Ativar o botão
+    public void entrar(){
+        this.controle.entradadosistema();
+    }
+    
     public void exibeMensagem(String mensagem) {
      JOptionPane.showMessageDialog(this, mensagem);
     }

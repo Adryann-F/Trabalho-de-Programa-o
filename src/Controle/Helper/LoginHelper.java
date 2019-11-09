@@ -16,7 +16,7 @@ public class LoginHelper implements Helper{
       //pegar o usuario, pesquisar no banco, sverificar os dados
     String nome = view.getjTextUsuario().getText();
     String senha = view.getjSenha().getText();
-    Funcionarios Usuario = new Funcionarios(nome, "", "", 00, null, null, senha);
+    Funcionarios Usuario = new Funcionarios(nome, "", "", 00, null, null, null, senha);
     return Usuario;
     }
     //pegar as informações

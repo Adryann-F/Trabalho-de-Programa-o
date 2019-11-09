@@ -1,6 +1,10 @@
 package Programa;
 
 import Controle.ControleCCliente;
+import com.sun.glass.events.KeyEvent;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 /**
  *
  * @author Adryann
@@ -14,6 +18,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     public CadastroCliente() {
         initComponents();
         this.controle = new ControleCCliente(this);
+        this.controle.atualizaTabela();
+        
         
     }
 
@@ -103,6 +109,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         jButtonancelar.setBackground(new java.awt.Color(51, 51, 51));
         jButtonancelar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonancelar.setText("Novo");
+        jButtonancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonancelar);
         jButtonancelar.setBounds(160, 190, 90, 23);
 
@@ -110,6 +121,12 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6.setText("Pesquisar:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 230, 110, 30);
+
+        jTextFieldClienteSexo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldClienteSexoKeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextFieldClienteSexo);
         jTextFieldClienteSexo.setBounds(170, 140, 140, 20);
 
@@ -179,8 +196,19 @@ public class CadastroCliente extends javax.swing.JFrame {
         // Voltar para tela principal
          TelaPrincipal tela = new TelaPrincipal();
                       tela.setVisible(true);
-        dispose();
+                             dispose();
     }//GEN-LAST:event_jButtonNovoActionPerformed
+
+    private void jTextFieldClienteSexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldClienteSexoKeyPressed
+        // 
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+         cadastrar(); 
+    }//GEN-LAST:event_jTextFieldClienteSexoKeyPressed
+
+    private void jButtonancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonancelarActionPerformed
+        //limpar dados botão novo
+        this.controle.novo();
+    }//GEN-LAST:event_jButtonancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,4 +270,68 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPesquisarClienteCPF;
     private javax.swing.JTextField jTextFieldPesquisarClienteNome;
     // End of variables declaration//GEN-END:variables
+    
+        public void cadastrar(){
+         //Cadastro de clientes
+        if(!"".equals(this.jTextFieldNomeCliente.getText()) && !"".equals(this.jTextFieldCPFCliente.getText()) && !"".equals(this.jTextFieldContatoCliente.getText())){
+        this.controle.salvar();
+     }else{
+       exibeMensagem("Está faltando algum dado!!");  
+     } 
+        }
+        
+    //exibir mensagens no sistema
+    public void exibeMensagem(String mensagem) {
+     JOptionPane.showMessageDialog(this, mensagem);
+    }
+    
+    public JTextField getIdadeCliente() {
+        return IdadeCliente;
+    }
+
+    public void setIdadeCliente(JTextField IdadeCliente) {
+        this.IdadeCliente = IdadeCliente;
+    }
+
+    public JTextField getjTextFieldCPFCliente() {
+        return jTextFieldCPFCliente;
+    }
+
+    public void setjTextFieldCPFCliente(JTextField jTextFieldCPFCliente) {
+        this.jTextFieldCPFCliente = jTextFieldCPFCliente;
+    }
+
+    public JTextField getjTextFieldClienteSexo() {
+        return jTextFieldClienteSexo;
+    }
+
+    public void setjTextFieldClienteSexo(JTextField jTextFieldClienteSexo) {
+        this.jTextFieldClienteSexo = jTextFieldClienteSexo;
+    }
+
+    public JTextField getjTextFieldContatoCliente() {
+        return jTextFieldContatoCliente;
+    }
+
+    public void setjTextFieldContatoCliente(JTextField jTextFieldContatoCliente) {
+        this.jTextFieldContatoCliente = jTextFieldContatoCliente;
+    }
+
+    public JTextField getjTextFieldNomeCliente() {
+        return jTextFieldNomeCliente;
+    }
+
+    public void setjTextFieldNomeCliente(JTextField jTextFieldNomeCliente) {
+        this.jTextFieldNomeCliente = jTextFieldNomeCliente;
+    }
+
+    public JTable getjTabelaClientes() {
+        return jTable1;
+    }
+
+    public void setjTabelaClientes(JTable jTabelaClientes) {
+        this.jTable1 = jTabelaClientes;
+    }
+
+
 }

@@ -28,7 +28,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Fundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuAgendamento = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -44,9 +43,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setResizable(false);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Fundo.png"))); // NOI18N
-
-        jMenu1.setText("Menu");
-        jMenuBar1.add(jMenu1);
 
         jMenu4.setText("Agendamentos");
 
@@ -204,7 +200,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fundo;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
