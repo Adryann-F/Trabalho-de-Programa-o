@@ -48,12 +48,12 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextFieldSalarioFuncio = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabelFuncionarioSexo = new javax.swing.JLabel();
+        jLabel3443 = new javax.swing.JLabel();
         jTextFieldFuncionarioSexo = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabelFuncionarioEnd = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jlabel = new javax.swing.JLabel();
+        jLabelFuncionarioEndereco = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableFuncionarios = new javax.swing.JTable();
         Fundo = new javax.swing.JLabel();
@@ -153,11 +153,16 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(210, 250, 90, 23);
 
-        jLabelFuncionarioSexo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelFuncionarioSexo.setText("Sexo:");
-        getContentPane().add(jLabelFuncionarioSexo);
-        jLabelFuncionarioSexo.setBounds(250, 210, 40, 20);
+        jLabel3443.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3443.setText("Sexo:");
+        getContentPane().add(jLabel3443);
+        jLabel3443.setBounds(250, 210, 40, 20);
 
+        jTextFieldFuncionarioSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFuncionarioSexoActionPerformed(evt);
+            }
+        });
         jTextFieldFuncionarioSexo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldFuncionarioSexoKeyPressed(evt);
@@ -169,6 +174,11 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(51, 255, 0));
         jButton2.setText("Salvar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
         jButton2.setBounds(70, 250, 90, 23);
 
@@ -183,12 +193,12 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(360, 250, 90, 23);
 
-        jLabelFuncionarioEnd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelFuncionarioEnd.setText("Endereço:");
-        getContentPane().add(jLabelFuncionarioEnd);
-        jLabelFuncionarioEnd.setBounds(20, 190, 80, 20);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(80, 190, 300, 20);
+        jlabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jlabel.setText("Endereço:");
+        getContentPane().add(jlabel);
+        jlabel.setBounds(10, 190, 80, 20);
+        getContentPane().add(jLabelFuncionarioEndereco);
+        jLabelFuncionarioEndereco.setBounds(80, 190, 300, 20);
 
         jTableFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -198,7 +208,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "CPF", "Contato", "Cargo", "Endereço", "Salario"
+                "Nome", "CPF", "Contato", "Cargo", "Idade", "Salario"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -256,6 +266,15 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldSalarioFuncioActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Salvar novos funcionarios
+        cadastrar();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextFieldFuncionarioSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFuncionarioSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFuncionarioSexoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,16 +318,15 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel3443;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabelFuncionarioEnd;
-    private javax.swing.JLabel jLabelFuncionarioSexo;
+    private javax.swing.JTextField jLabelFuncionarioEndereco;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableFuncionarios;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldCPFFuncio;
     private javax.swing.JTextField jTextFieldCargoFuncio;
     private javax.swing.JTextField jTextFieldContFuncio;
@@ -317,12 +335,14 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldIdadeFuncio;
     private javax.swing.JTextField jTextFieldNomeFuncio;
     private javax.swing.JTextField jTextFieldSalarioFuncio;
+    private javax.swing.JLabel jlabel;
     // End of variables declaration//GEN-END:variables
 
     private void cadastrar() {
          //Cadastro de funcionarios
         if(!"".equals(this.jTextFieldNomeFuncio.getText()) && !"".equals(this.jTextFieldCargoFuncio.getText()) && !"".equals(this.jTextFieldCPFFuncio.getText())){
         this.controle.salvar();
+       
      }else{
        exibeMensagem("Está faltando algum dado!!");  
      } }
@@ -338,21 +358,13 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     public void setjTextFieldSalarioFuncio(JTextField jTextFieldSalarioFuncio) {
         this.jTextFieldSalarioFuncio = jTextFieldSalarioFuncio;
     }
-    
-    public JLabel getjLabelFuncionarioEnd() {
-        return jLabelFuncionarioEnd;
+
+    public JTextField getjLabelFuncionarioEndereco() {
+        return jLabelFuncionarioEndereco;
     }
 
-    public void setjLabelFuncionarioEnd(JLabel jLabelFuncionarioEnd) {
-        this.jLabelFuncionarioEnd = jLabelFuncionarioEnd;
-    }
-
-    public JLabel getjLabelFuncionarioSexo() {
-        return jLabelFuncionarioSexo;
-    }
-
-    public void setjLabelFuncionarioSexo(JLabel jLabelFuncionarioSexo) {
-        this.jLabelFuncionarioSexo = jLabelFuncionarioSexo;
+    public void setjLabelFuncionarioEndereco(JTextField jLabelFuncionarioEndereco) {
+        this.jLabelFuncionarioEndereco = jLabelFuncionarioEndereco;
     }
 
     public JTable getjTableFuncionarios() {

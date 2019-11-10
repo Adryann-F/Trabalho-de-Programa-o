@@ -100,6 +100,8 @@ public class TelaAgendamento extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBoxservico, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 100, -1));
+
+        AId.setText("0");
         getContentPane().add(AId, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

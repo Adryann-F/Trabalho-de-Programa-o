@@ -14,5 +14,21 @@ public class Funcionarios extends Pessoa {
         this.End = End;
         this.salario = salario;
     }
+
+    public String getEnd() {
+        return End;
+    }
+
+    public void setEnd(String End) {
+        this.End = End;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
     
 }

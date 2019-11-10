@@ -7,6 +7,8 @@ package Controle.Helper;
 
 import Modelos.Funcionarios;
 import Programa.CadastroFuncionarios;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,14 +22,14 @@ public class FuncionarioHelper implements Helper{
     }
        
     @Override
-    public Object obterModelo() {
+    public Funcionarios obterModelo() {
         //buscas funcinarios para salvar
       String nome = view.getjTextFieldNomeFuncio().getText();
       String cpf = view.getjTextFieldCPFFuncio().getText();
       String  contato = view.getjTextFieldContFuncio().getText();
       String cargo = view.getjTextFieldCargoFuncio().getText();
-      String endereco = view.getjLabelFuncionarioEnd().getText();
-      String  sexo = view.getjLabelFuncionarioSexo().getText();
+      String endereco = view.getjLabelFuncionarioEndereco().getText();
+      String  sexo = view.getjTextFieldFuncionarioSexo().getText();
       String senha = view.getjTextFieldContaFuncio().getText();
       String Ssalario = view.getjTextFieldSalarioFuncio().getText();
       //conversão de salario
@@ -41,8 +43,33 @@ public class FuncionarioHelper implements Helper{
 
     @Override
     public void limparTela() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-//To change body of generated methods, choose Tools | Templates.
+       view.getjLabelFuncionarioEndereco().setText(null);
+       view.getjTextFieldFuncionarioSexo().setText(null);
+       view.getjTextFieldCPFFuncio().setText(null);
+       view.getjTextFieldCargoFuncio().setText(null);
+       view.getjTextFieldContFuncio().setText(null);
+       view.getjTextFieldContaFuncio().setText(null);
+       view.getjTextFieldIdadeFuncio().setText(null);
+       view.getjTextFieldNomeFuncio().setText(null);
+       view.getjTextFieldSalarioFuncio().setText(null);
+    }
+
+    public void preencherTabela(ArrayList<Funcionarios> funcionarios) {
+        //pegar conteudo
+        DefaultTableModel tabelaModelo = (DefaultTableModel) view.getjTableFuncionarios().getModel();
+        tabelaModelo.setNumRows(0);
+        //Percorrer a lista
+        for (Funcionarios funcionario : funcionarios) {
+            tabelaModelo.addRow(new Object[]{
+            funcionario.getNome(), 
+            funcionario.getCpf(),
+            funcionario.getContato(),
+            funcionario.getCargo(),
+            funcionario.getIdade(),
+            funcionario.getSalario()
+            });
+                
+        }
     }
     
 }
