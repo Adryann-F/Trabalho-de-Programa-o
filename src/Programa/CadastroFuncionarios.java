@@ -56,6 +56,13 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabelFuncionarioEndereco = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableFuncionarios = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldPesquisarFuncionarioNome = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextFieldPesquisarFuncionarioCPF = new javax.swing.JTextField();
+        jButtonPesquisarFuncionarios = new javax.swing.JButton();
+        jButtonDeletarFuncionarioDT = new javax.swing.JButton();
         Fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -65,36 +72,36 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Nome:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 90, 50, 20);
+        jLabel3.setBounds(20, 70, 50, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Idade:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 210, 50, 20);
+        jLabel4.setBounds(20, 160, 50, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Cadastro de Funcionários");
         jLabel5.setToolTipText("");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 510, 80);
+        jLabel5.setBounds(30, -10, 510, 80);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Senha:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(10, 150, 50, 20);
+        jLabel6.setBounds(240, 100, 50, 20);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("CPF:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(20, 110, 40, 20);
+        jLabel7.setBounds(310, 70, 40, 20);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Contato:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 130, 60, 20);
+        jLabel1.setBounds(20, 100, 60, 20);
         getContentPane().add(jTextFieldNomeFuncio);
-        jTextFieldNomeFuncio.setBounds(60, 90, 240, 20);
+        jTextFieldNomeFuncio.setBounds(60, 70, 240, 20);
 
         jTextFieldCPFFuncio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,17 +109,22 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldCPFFuncio);
-        jTextFieldCPFFuncio.setBounds(50, 110, 190, 20);
+        jTextFieldCPFFuncio.setBounds(340, 70, 190, 20);
 
         jTextFieldIdadeFuncio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldIdadeFuncioActionPerformed(evt);
             }
         });
+        jTextFieldIdadeFuncio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldIdadeFuncioKeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextFieldIdadeFuncio);
-        jTextFieldIdadeFuncio.setBounds(200, 210, 40, 20);
+        jTextFieldIdadeFuncio.setBounds(60, 160, 40, 20);
         getContentPane().add(jTextFieldContFuncio);
-        jTextFieldContFuncio.setBounds(80, 130, 160, 20);
+        jTextFieldContFuncio.setBounds(80, 100, 160, 20);
 
         jTextFieldContaFuncio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,19 +132,25 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldContaFuncio);
-        jTextFieldContaFuncio.setBounds(60, 150, 130, 20);
+        jTextFieldContaFuncio.setBounds(290, 100, 130, 20);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Cargo:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 170, 60, 20);
+        jLabel2.setBounds(20, 130, 60, 20);
+
+        jTextFieldCargoFuncio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCargoFuncioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextFieldCargoFuncio);
-        jTextFieldCargoFuncio.setBounds(60, 170, 130, 20);
+        jTextFieldCargoFuncio.setBounds(60, 130, 130, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Salario:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(20, 210, 60, 20);
+        jLabel8.setBounds(430, 100, 60, 20);
 
         jTextFieldSalarioFuncio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +158,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldSalarioFuncio);
-        jTextFieldSalarioFuncio.setBounds(70, 210, 80, 20);
+        jTextFieldSalarioFuncio.setBounds(480, 100, 80, 20);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,12 +169,12 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 250, 90, 23);
+        jButton1.setBounds(350, 200, 90, 23);
 
         jLabel3443.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3443.setText("Sexo:");
         getContentPane().add(jLabel3443);
-        jLabel3443.setBounds(250, 210, 40, 20);
+        jLabel3443.setBounds(160, 160, 40, 20);
 
         jTextFieldFuncionarioSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +187,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldFuncionarioSexo);
-        jTextFieldFuncionarioSexo.setBounds(290, 210, 90, 20);
+        jTextFieldFuncionarioSexo.setBounds(210, 160, 90, 20);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(51, 255, 0));
@@ -180,25 +198,25 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(70, 250, 90, 23);
+        jButton2.setBounds(220, 200, 90, 23);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setForeground(new java.awt.Color(255, 0, 0));
-        jButton3.setText("Cancelar");
+        jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(360, 250, 90, 23);
+        jButton3.setBounds(470, 200, 90, 23);
 
         jlabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlabel.setText("Endereço:");
         getContentPane().add(jlabel);
-        jlabel.setBounds(10, 190, 80, 20);
+        jlabel.setBounds(200, 130, 80, 20);
         getContentPane().add(jLabelFuncionarioEndereco);
-        jLabelFuncionarioEndereco.setBounds(80, 190, 300, 20);
+        jLabelFuncionarioEndereco.setBounds(270, 130, 300, 20);
 
         jTableFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -222,13 +240,67 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableFuncionarios);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 280, 590, 160);
+        jScrollPane1.setBounds(10, 330, 600, 150);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Pesquisar:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(20, 230, 110, 30);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setText("Nome:");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(30, 260, 60, 17);
+
+        jTextFieldPesquisarFuncionarioNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPesquisarFuncionarioNomeKeyPressed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldPesquisarFuncionarioNome);
+        jTextFieldPesquisarFuncionarioNome.setBounds(70, 260, 240, 20);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("OU CPF:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(310, 260, 70, 20);
+
+        jTextFieldPesquisarFuncionarioCPF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPesquisarFuncionarioCPFKeyPressed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldPesquisarFuncionarioCPF);
+        jTextFieldPesquisarFuncionarioCPF.setBounds(370, 260, 190, 20);
+
+        jButtonPesquisarFuncionarios.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonPesquisarFuncionarios.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonPesquisarFuncionarios.setForeground(new java.awt.Color(51, 255, 0));
+        jButtonPesquisarFuncionarios.setText("Pesquisar");
+        jButtonPesquisarFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarFuncionariosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonPesquisarFuncionarios);
+        jButtonPesquisarFuncionarios.setBounds(290, 300, 110, 20);
+
+        jButtonDeletarFuncionarioDT.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonDeletarFuncionarioDT.setForeground(new java.awt.Color(255, 0, 51));
+        jButtonDeletarFuncionarioDT.setText("Deletar");
+        jButtonDeletarFuncionarioDT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarFuncionarioDTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarFuncionarioDT);
+        jButtonDeletarFuncionarioDT.setBounds(450, 300, 110, 23);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoFuncio.jpg"))); // NOI18N
         getContentPane().add(Fundo);
-        Fundo.setBounds(0, 0, 590, 450);
+        Fundo.setBounds(0, 0, 620, 490);
 
-        setSize(new java.awt.Dimension(594, 471));
+        setSize(new java.awt.Dimension(624, 519));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -275,6 +347,38 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldFuncionarioSexoActionPerformed
 
+    private void jTextFieldIdadeFuncioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldIdadeFuncioKeyPressed
+         // usar o enter para criar o cadastro
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+         cadastrar();
+    }//GEN-LAST:event_jTextFieldIdadeFuncioKeyPressed
+
+    private void jTextFieldCargoFuncioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCargoFuncioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCargoFuncioActionPerformed
+
+    private void jTextFieldPesquisarFuncionarioNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarFuncionarioNomeKeyPressed
+        // ao precionar enter execuar a função
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        pesquisarPorFuncionarios();
+    }//GEN-LAST:event_jTextFieldPesquisarFuncionarioNomeKeyPressed
+
+    private void jTextFieldPesquisarFuncionarioCPFKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarFuncionarioCPFKeyPressed
+        // ao precionar enter execuar a função
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        pesquisarPorFuncionarios();
+    }//GEN-LAST:event_jTextFieldPesquisarFuncionarioCPFKeyPressed
+
+    private void jButtonPesquisarFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarFuncionariosActionPerformed
+        //Pesquisar por um cliente
+        pesquisarPorFuncionarios();
+    }//GEN-LAST:event_jButtonPesquisarFuncionariosActionPerformed
+
+    private void jButtonDeletarFuncionarioDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarFuncionarioDTActionPerformed
+        // deletar deletar cliente
+        this.controle.deletarFuncionario();
+    }//GEN-LAST:event_jButtonDeletarFuncionarioDTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,7 +419,11 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonDeletarFuncionarioDT;
+    private javax.swing.JButton jButtonPesquisarFuncionarios;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel3443;
@@ -324,6 +432,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jLabelFuncionarioEndereco;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableFuncionarios;
@@ -334,6 +443,8 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFuncionarioSexo;
     private javax.swing.JTextField jTextFieldIdadeFuncio;
     private javax.swing.JTextField jTextFieldNomeFuncio;
+    private javax.swing.JTextField jTextFieldPesquisarFuncionarioCPF;
+    private javax.swing.JTextField jTextFieldPesquisarFuncionarioNome;
     private javax.swing.JTextField jTextFieldSalarioFuncio;
     private javax.swing.JLabel jlabel;
     // End of variables declaration//GEN-END:variables
@@ -429,6 +540,10 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
 
     public void setjTextFieldNomeFuncio(JTextField jTextFieldNomeFuncio) {
         this.jTextFieldNomeFuncio = jTextFieldNomeFuncio;
+    }
+
+    private void pesquisarPorFuncionarios() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     }

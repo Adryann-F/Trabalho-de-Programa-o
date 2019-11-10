@@ -9,12 +9,12 @@ public class FuncionarioDAO {
      * Insere um usuario dentro do banco de dados
      * @param usuario exige que seja passado um objeto do tipo usuario
      */
-    public void insert(Funcionarios usuario){
+    public void inserir(Funcionarios usuario){
         Banco.usuario.add(usuario);
     }
     
      // Atualiza um Objeto no banco de dados
-    public boolean update(Funcionarios usuario){
+    public boolean atualizarDados(Funcionarios usuario){
         
         for (int i = 0; i < Banco.usuario.size(); i++) {
             if(idSaoIguais(Banco.usuario.get(i),usuario)){
@@ -26,7 +26,7 @@ public class FuncionarioDAO {
     }
     
      // Deleta um objeto do banco de dados pelo id do usuario passado
-    public boolean delete(Funcionarios usuario){
+    public boolean deletar(Funcionarios usuario){
         for (Funcionarios usuarioLista : Banco.usuario) {
             if(idSaoIguais(usuarioLista,usuario)){
                 Banco.usuario.remove(usuarioLista);

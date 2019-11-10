@@ -45,13 +45,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         jButtonancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextFieldClienteSexo = new javax.swing.JTextField();
+        jButtonDeletarFuncionarioDT = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldPesquisarClienteNome = new javax.swing.JTextField();
         jTextFieldPesquisarClienteCPF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonPesquisarClientes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         FundoCadastro = new javax.swing.JLabel();
@@ -86,18 +87,29 @@ public class CadastroCliente extends javax.swing.JFrame {
         jTextFieldCPFCliente.setBounds(80, 80, 170, 20);
         getContentPane().add(jTextFieldContatoCliente);
         jTextFieldContatoCliente.setBounds(80, 110, 120, 20);
+
+        IdadeCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IdadeClienteKeyPressed(evt);
+            }
+        });
         getContentPane().add(IdadeCliente);
         IdadeCliente.setBounds(80, 140, 40, 20);
 
         jButtonSalvar.setBackground(new java.awt.Color(51, 51, 51));
         jButtonSalvar.setForeground(new java.awt.Color(51, 255, 0));
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonSalvar);
         jButtonSalvar.setBounds(40, 190, 80, 23);
 
         jButtonNovo.setBackground(new java.awt.Color(0, 0, 0));
-        jButtonNovo.setForeground(new java.awt.Color(255, 51, 0));
-        jButtonNovo.setText("Cancelar");
+        jButtonNovo.setForeground(new java.awt.Color(255, 0, 51));
+        jButtonNovo.setText("Voltar");
         jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoActionPerformed(evt);
@@ -120,7 +132,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Pesquisar:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 230, 110, 30);
+        jLabel6.setBounds(0, 220, 110, 30);
 
         jTextFieldClienteSexo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -130,34 +142,64 @@ public class CadastroCliente extends javax.swing.JFrame {
         getContentPane().add(jTextFieldClienteSexo);
         jTextFieldClienteSexo.setBounds(170, 140, 140, 20);
 
+        jButtonDeletarFuncionarioDT.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonDeletarFuncionarioDT.setForeground(new java.awt.Color(255, 0, 51));
+        jButtonDeletarFuncionarioDT.setText("Deletar");
+        jButtonDeletarFuncionarioDT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarFuncionarioDTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarFuncionarioDT);
+        jButtonDeletarFuncionarioDT.setBounds(410, 280, 110, 23);
+
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Sexo:");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(130, 140, 50, 20);
+
+        jTextFieldPesquisarClienteNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPesquisarClienteNomeKeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextFieldPesquisarClienteNome);
-        jTextFieldPesquisarClienteNome.setBounds(60, 260, 240, 20);
+        jTextFieldPesquisarClienteNome.setBounds(60, 250, 240, 20);
+
+        jTextFieldPesquisarClienteCPF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPesquisarClienteCPFKeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextFieldPesquisarClienteCPF);
-        jTextFieldPesquisarClienteCPF.setBounds(360, 260, 190, 20);
+        jTextFieldPesquisarClienteCPF.setBounds(360, 250, 190, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Nome:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 260, 60, 17);
+        jLabel5.setBounds(10, 250, 60, 17);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText(" OU");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(300, 260, 30, 20);
+        jLabel7.setBounds(300, 250, 30, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("CPF:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(330, 260, 50, 20);
+        jLabel8.setBounds(330, 250, 50, 20);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Pesquisar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(410, 280, 130, 30);
+        jButtonPesquisarClientes.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonPesquisarClientes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonPesquisarClientes.setForeground(new java.awt.Color(51, 255, 0));
+        jButtonPesquisarClientes.setText("Pesquisar");
+        jButtonPesquisarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarClientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonPesquisarClientes);
+        jButtonPesquisarClientes.setBounds(280, 280, 110, 20);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,9 +228,9 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
         getContentPane().add(FundoCadastro);
-        FundoCadastro.setBounds(-40, -130, 620, 670);
+        FundoCadastro.setBounds(-40, -110, 620, 670);
 
-        setSize(new java.awt.Dimension(558, 465));
+        setSize(new java.awt.Dimension(558, 459));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -200,7 +242,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jTextFieldClienteSexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldClienteSexoKeyPressed
-        // 
+        // fazer o cadastro apertando enter
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
          cadastrar(); 
     }//GEN-LAST:event_jTextFieldClienteSexoKeyPressed
@@ -210,6 +252,44 @@ public class CadastroCliente extends javax.swing.JFrame {
         this.controle.novo();
     }//GEN-LAST:event_jButtonancelarActionPerformed
 
+    private void jButtonPesquisarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarClientesActionPerformed
+        //Pesquisar por um cliente
+     pesquisarPorClientes();
+    }//GEN-LAST:event_jButtonPesquisarClientesActionPerformed
+
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        // Salvar novo cliente
+        if(!"".equals(this.jTextFieldNomeCliente.getText()) && !"".equals(this.jTextFieldCPFCliente.getText())
+                && !"".equals(this.IdadeCliente.getText()) && !"".equals(this.jTextFieldContatoCliente.getText())){
+        this.controle.salvar();
+     }else{
+       exibeMensagem("Dados incompletos!!");  
+     }
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jTextFieldPesquisarClienteNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarClienteNomeKeyPressed
+            // ao precionar enter execuar a função 
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+            pesquisarPorClientes();
+    }//GEN-LAST:event_jTextFieldPesquisarClienteNomeKeyPressed
+
+    private void jTextFieldPesquisarClienteCPFKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarClienteCPFKeyPressed
+        // ao precionar enter execuar a função 
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+            pesquisarPorClientes();
+    }//GEN-LAST:event_jTextFieldPesquisarClienteCPFKeyPressed
+
+    private void IdadeClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IdadeClienteKeyPressed
+            // fazer o cadastro com o enter
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+         cadastrar(); 
+    }//GEN-LAST:event_IdadeClienteKeyPressed
+
+    private void jButtonDeletarFuncionarioDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarFuncionarioDTActionPerformed
+        // deletar deletar cliente
+        this.controle.deletarCliente();
+    }//GEN-LAST:event_jButtonDeletarFuncionarioDTActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -248,8 +328,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FundoCadastro;
     private javax.swing.JTextField IdadeCliente;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonDeletarFuncionarioDT;
     private javax.swing.JButton jButtonNovo;
+    private javax.swing.JButton jButtonPesquisarClientes;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonancelar;
     private javax.swing.JLabel jLabel1;
@@ -279,10 +360,34 @@ public class CadastroCliente extends javax.swing.JFrame {
        exibeMensagem("Está faltando algum dado!!");  
      } 
         }
-        
+      public void pesquisarPorClientes(){
+          //Pesquisar por um cliente
+          if(!"".equals(this.jTextFieldPesquisarClienteNome.getText()) || !"".equals(this.jTextFieldPesquisarClienteCPF.getText())){
+        this.controle.buscarCliente();
+     }else{
+       exibeMensagem("Dados incompletos!!");  
+     }
+     
+      }  
     //exibir mensagens no sistema
     public void exibeMensagem(String mensagem) {
      JOptionPane.showMessageDialog(this, mensagem);
+    }
+
+    public JTextField getjTextFieldPesquisarClienteCPF() {
+        return jTextFieldPesquisarClienteCPF;
+    }
+
+    public void setjTextFieldPesquisarClienteCPF(JTextField jTextFieldPesquisarClienteCPF) {
+        this.jTextFieldPesquisarClienteCPF = jTextFieldPesquisarClienteCPF;
+    }
+
+    public JTextField getjTextFieldPesquisarClienteNome() {
+        return jTextFieldPesquisarClienteNome;
+    }
+
+    public void setjTextFieldPesquisarClienteNome(JTextField jTextFieldPesquisarClienteNome) {
+        this.jTextFieldPesquisarClienteNome = jTextFieldPesquisarClienteNome;
     }
     
     public JTextField getIdadeCliente() {

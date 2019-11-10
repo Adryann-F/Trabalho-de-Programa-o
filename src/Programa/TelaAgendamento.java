@@ -6,6 +6,7 @@
 package Programa;
 
 import Controle.ControleAgenda;
+import com.sun.glass.events.KeyEvent;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -116,7 +117,7 @@ public class TelaAgendamento extends javax.swing.JFrame {
         getContentPane().add(AValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 90, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Cancelar");
+        jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -127,6 +128,12 @@ public class TelaAgendamento extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Observações:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 120, -1));
+
+        AData.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ADataKeyPressed(evt);
+            }
+        });
         getContentPane().add(AData, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 110, -1));
 
         AValorC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -171,12 +178,7 @@ public class TelaAgendamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     if(!"".equals(this.AData.getText()) && !"".equals(this.AValor.getText())){
-        this.controle.agendar();
-     }else{
-       exibeMensagem("Está faltando algum dado!!");  
-     }
-     
+     agendar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -201,6 +203,12 @@ public class TelaAgendamento extends javax.swing.JFrame {
     private void jComboBoxservicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxservicoItemStateChanged
         this.controle.atualizaValor();
     }//GEN-LAST:event_jComboBoxservicoItemStateChanged
+
+    private void ADataKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADataKeyPressed
+        // usar o enter para criar o cadastro
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        agendar();
+    }//GEN-LAST:event_ADataKeyPressed
 
     /**
      * @param args the command line arguments
@@ -269,6 +277,15 @@ public class TelaAgendamento extends javax.swing.JFrame {
      public void exibeMensagem(String mensagem) {
      JOptionPane.showMessageDialog(this, mensagem);
     }
+     public void agendar(){
+     //agendar
+        if(!"".equals(this.AData.getText()) && !"".equals(this.AValor.getText())){
+        this.controle.agendar();
+     }else{
+       exibeMensagem("Está faltando algum dado!!");  
+     }
+     
+     }
     
     public JTable getTabeladeAgendamentos() {
         return TabeladeAgendamentos;

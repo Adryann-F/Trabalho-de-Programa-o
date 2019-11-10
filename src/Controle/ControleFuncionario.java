@@ -36,10 +36,14 @@ public class ControleFuncionario {
         //pegar funcionario
      Funcionarios funcionario = helper.obterModelo();
         //salvar funcionario
-        new FuncionarioDAO().insert(funcionario);
+        new FuncionarioDAO().inserir(funcionario);
         //atualizar a tabela
         atualizaTabela();
         helper.limparTela();
+    }
+
+    public void deletarFuncionario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

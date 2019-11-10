@@ -19,7 +19,7 @@ public class ControleCCliente {
         //pegar o cliente
          Cliente cliente = helper.obterModelo();
          //salvar o cliente no banco
-         new ClienteDAO().insert(cliente);
+         new ClienteDAO().inserir(cliente);
          atualizaTabela();
          helper.limparTela();
     }
@@ -35,5 +35,24 @@ public class ControleCCliente {
      //limpar tudo para se fazer um novo cadastro
      public void novo(){
      helper.limparTela();
+     atualizaTabela();
      }
+
+    public void buscarCliente() {
+        //Pegar os dados da tela
+        Cliente cliente = helper.pesquisarCLiente();
+       //exibir cliente
+       if(cliente != null){
+        helper.mostrarClienteTabela(cliente);
+       }
+    }
+       public void deletarCliente(){
+           //pegar cliente da tela
+       Cliente cliente = helper.pesquisarCLiente();
+        new ClienteDAO().deletar(cliente);
+        atualizaTabela();
+        helper.limparTela();
+       
+       }
+  
 }
