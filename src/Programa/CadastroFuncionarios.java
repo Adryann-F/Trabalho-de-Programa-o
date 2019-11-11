@@ -3,7 +3,6 @@ package Programa;
 
 import Controle.ControleFuncionario;
 import com.sun.glass.events.KeyEvent;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -87,7 +86,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jLabel5.setBounds(30, -10, 510, 80);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Senha:");
+        jLabel6.setText("Conta:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(240, 100, 50, 20);
 
@@ -220,17 +219,14 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
 
         jTableFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Nome", "CPF", "Contato", "Cargo", "Idade", "Salario"
+                "Nome", "CPF", "Contato", "Cargo", "Idade", "Salario", "Conta"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -240,7 +236,7 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableFuncionarios);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 330, 600, 150);
+        jScrollPane1.setBounds(10, 330, 660, 150);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Pesquisar:");
@@ -252,6 +248,11 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(30, 260, 60, 17);
 
+        jTextFieldPesquisarFuncionarioNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPesquisarFuncionarioNomeActionPerformed(evt);
+            }
+        });
         jTextFieldPesquisarFuncionarioNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldPesquisarFuncionarioNomeKeyPressed(evt);
@@ -296,11 +297,11 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jButtonDeletarFuncionarioDT);
         jButtonDeletarFuncionarioDT.setBounds(450, 300, 110, 23);
 
-        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoFuncio.jpg"))); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/canais-em-hd-que-ainda-nao-existem-e1471894627145.jpg"))); // NOI18N
         getContentPane().add(Fundo);
-        Fundo.setBounds(0, 0, 620, 490);
+        Fundo.setBounds(0, 0, 700, 490);
 
-        setSize(new java.awt.Dimension(624, 519));
+        setSize(new java.awt.Dimension(683, 519));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -378,6 +379,10 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
         // deletar deletar cliente
         this.controle.deletarFuncionario();
     }//GEN-LAST:event_jButtonDeletarFuncionarioDTActionPerformed
+
+    private void jTextFieldPesquisarFuncionarioNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarFuncionarioNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPesquisarFuncionarioNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,6 +467,23 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
      JOptionPane.showMessageDialog(this, mensagem);
     }
 
+    public JTextField getjTextFieldPesquisarFuncionarioCPF() {
+        return jTextFieldPesquisarFuncionarioCPF;
+    }
+
+    public void setjTextFieldPesquisarFuncionarioCPF(JTextField jTextFieldPesquisarFuncionarioCPF) {
+        this.jTextFieldPesquisarFuncionarioCPF = jTextFieldPesquisarFuncionarioCPF;
+    }
+
+    public JTextField getjTextFieldPesquisarFuncionarioNome() {
+        return jTextFieldPesquisarFuncionarioNome;
+    }
+
+    public void setjTextFieldPesquisarFuncionarioNome(JTextField jTextFieldPesquisarFuncionarioNome) {
+        this.jTextFieldPesquisarFuncionarioNome = jTextFieldPesquisarFuncionarioNome;
+    }
+    
+    
     public JTextField getjTextFieldSalarioFuncio() {
         return jTextFieldSalarioFuncio;
     }
@@ -543,7 +565,12 @@ public class CadastroFuncionarios extends javax.swing.JFrame {
     }
 
     private void pesquisarPorFuncionarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      if(!"".equals(this.jTextFieldPesquisarFuncionarioNome.getText()) || 
+              !"".equals(this.jTextFieldPesquisarFuncionarioCPF.getText())){
+        this.controle.buscarFuncionario();
+     }else{
+       exibeMensagem("Dados incompletos!!");  
+     }
     }
     
     }

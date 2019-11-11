@@ -2,14 +2,14 @@
 package Modelos;
 public class Funcionarios extends Pessoa {
     String End;
-    float salario;
+    double salario;
     
     public Funcionarios( String nome, String cpf, String contato, int idade, String End, String sexo, String cargo, String senha) {
         super(nome, cpf, contato, idade, sexo, cargo, senha);
         this.End = End;
     }
     //funcionario para agendamentos
-    public Funcionarios(String End, float salario, String nome, String cpf, String contato, int idade, String sexo, String cargo, String senha) {
+    public Funcionarios(String nome, String cpf, String contato, int idade, String End, String sexo, String cargo, String senha, double salario) {
         super(nome, cpf, contato, idade, sexo, cargo, senha);
         this.End = End;
         this.salario = salario;
@@ -23,11 +23,11 @@ public class Funcionarios extends Pessoa {
         this.End = End;
     }
 
-    public float getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
     

@@ -42,7 +42,7 @@ public class ControleCCliente {
         //Pegar os dados da tela
         Cliente cliente = helper.pesquisarCLiente();
        //exibir cliente
-       if(cliente != null){
+       if(cliente.getContato() != null){
         helper.mostrarClienteTabela(cliente);
        }
     }

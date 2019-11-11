@@ -11,6 +11,7 @@ public class FuncionarioDAO {
      */
     public void inserir(Funcionarios usuario){
         Banco.usuario.add(usuario);
+        Banco.usuariosuper.add(usuario);
     }
     
      // Atualiza um Objeto no banco de dados
@@ -43,7 +44,7 @@ public class FuncionarioDAO {
    
      // Retorna um Objeto do tipo usuario se a funcao encontrar o usuario passado como parâmetro no banco, para considerar sao usado nome e senha
     public Funcionarios selectPorNomeESenha(Funcionarios usuario){
-        for (Funcionarios usuarioLista : Banco.usuario) {
+        for (Funcionarios usuarioLista : Banco.usuariosuper) {
             if(nomeESenhaSaoIguais(usuarioLista,usuario)){
                 return usuarioLista;
             }

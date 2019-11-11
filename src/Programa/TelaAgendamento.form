@@ -254,8 +254,8 @@
                 <Column editable="false" title="Cliente" type="java.lang.Object"/>
                 <Column editable="false" title="Servi&#xe7;o" type="java.lang.Object"/>
                 <Column editable="false" title="Valor" type="java.lang.Object"/>
-                <Column editable="true" title="Data" type="java.lang.Object"/>
-                <Column editable="true" title="Observa&#xe7;&#xf5;es" type="java.lang.Object"/>
+                <Column editable="false" title="Data" type="java.lang.Object"/>
+                <Column editable="false" title="Observa&#xe7;&#xf5;es" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -285,7 +285,7 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -302,12 +302,12 @@
     <Component class="javax.swing.JLabel" name="Fundo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagens/Fundo.png"/>
+          <Image iconType="3" name="/Imagens/canais-em-hd-que-ainda-nao-existem-e1471894627145.jpg"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-10" y="-10" width="660" height="420"/>
+          <AbsoluteConstraints x="0" y="-10" width="660" height="420"/>
         </Constraint>
       </Constraints>
     </Component>

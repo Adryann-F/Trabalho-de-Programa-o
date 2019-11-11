@@ -32,7 +32,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuAgendamento = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jRadioButtonMenuItemCadastro = new javax.swing.JRadioButtonMenuItem();
-        jRadioButtonMenuItemRemocaoC = new javax.swing.JRadioButtonMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jRadioButtonMenuItemFuncionarios = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItemVoltar = new javax.swing.JRadioButtonMenuItem();
@@ -41,11 +40,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
+        getContentPane().setLayout(null);
 
-        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Fundo.png"))); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/verde.jpg"))); // NOI18N
+        getContentPane().add(Fundo);
+        Fundo.setBounds(-130, -60, 714, 547);
 
         jMenu4.setText("Agendamentos");
 
+        jMenuAgendamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
         jMenuAgendamento.setText("Fazer Agendamento");
         jMenuAgendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jRadioButtonMenuItemCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
         jRadioButtonMenuItemCadastro.setSelected(true);
         jRadioButtonMenuItemCadastro.setText("Cadastrar Clientes");
         jRadioButtonMenuItemCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -73,15 +76,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jRadioButtonMenuItemCadastro);
 
-        jRadioButtonMenuItemRemocaoC.setSelected(true);
-        jRadioButtonMenuItemRemocaoC.setText("Remover Clientes");
-        jMenu3.add(jRadioButtonMenuItemRemocaoC);
-
         jMenuBar1.add(jMenu3);
 
         jMenu5.setText("Mais+");
 
-        jRadioButtonMenuItemFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItemFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
         jRadioButtonMenuItemFuncionarios.setSelected(true);
         jRadioButtonMenuItemFuncionarios.setText("Funcionários");
         jRadioButtonMenuItemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
@@ -114,19 +113,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Fundo, javax.swing.GroupLayout.PREFERRED_SIZE, 511, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Fundo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
 
         setSize(new java.awt.Dimension(516, 319));
         setLocationRelativeTo(null);
@@ -207,7 +193,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemCadastro;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemFuncionarios;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemRemocaoC;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemSair;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItemVoltar;
     // End of variables declaration//GEN-END:variables

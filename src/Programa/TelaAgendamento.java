@@ -159,7 +159,7 @@ public class TelaAgendamento extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -167,11 +167,14 @@ public class TelaAgendamento extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(TabeladeAgendamentos);
+        if (TabeladeAgendamentos.getColumnModel().getColumnCount() > 0) {
+            TabeladeAgendamentos.getColumnModel().getColumn(5).setPreferredWidth(50);
+        }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 630, 170));
 
-        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Fundo.png"))); // NOI18N
-        getContentPane().add(Fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 660, 420));
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/canais-em-hd-que-ainda-nao-existem-e1471894627145.jpg"))); // NOI18N
+        getContentPane().add(Fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 420));
 
         pack();
         setLocationRelativeTo(null);

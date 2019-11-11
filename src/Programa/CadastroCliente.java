@@ -203,11 +203,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Nome", "Contato", "Cpf", "Idade", "Sexo"
@@ -224,9 +220,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 310, 560, 350);
+        jScrollPane1.setBounds(10, 310, 530, 350);
 
-        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Usuário.png"))); // NOI18N
+        FundoCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/verde.jpg"))); // NOI18N
         getContentPane().add(FundoCadastro);
         FundoCadastro.setBounds(-40, -110, 620, 670);
 
@@ -354,7 +350,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     
         public void cadastrar(){
          //Cadastro de clientes
-        if(!"".equals(this.jTextFieldNomeCliente.getText()) && !"".equals(this.jTextFieldCPFCliente.getText()) && !"".equals(this.jTextFieldContatoCliente.getText())){
+        if(!"".equals(this.jTextFieldNomeCliente.getText()) && !"".equals(this.jTextFieldCPFCliente.getText()) 
+                && !"".equals(this.jTextFieldContatoCliente.getText())){
         this.controle.salvar();
      }else{
        exibeMensagem("Está faltando algum dado!!");  
@@ -362,7 +359,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         }
       public void pesquisarPorClientes(){
           //Pesquisar por um cliente
-          if(!"".equals(this.jTextFieldPesquisarClienteNome.getText()) || !"".equals(this.jTextFieldPesquisarClienteCPF.getText())){
+          if(!"".equals(this.jTextFieldPesquisarClienteNome.getText()) || 
+                  !"".equals(this.jTextFieldPesquisarClienteCPF.getText())){
         this.controle.buscarCliente();
      }else{
        exibeMensagem("Dados incompletos!!");  

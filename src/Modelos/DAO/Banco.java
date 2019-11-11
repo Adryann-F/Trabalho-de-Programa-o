@@ -13,7 +13,7 @@ public class Banco {
     public static ArrayList<Cliente> cliente;
     public static ArrayList<Serviços> servico;
     public static ArrayList<Agendamento> agendamento;
-    
+    public static ArrayList<Funcionarios> usuariosuper;
     
     public static void inicia(){
     
@@ -24,7 +24,10 @@ public class Banco {
         agendamento = new ArrayList<>();
         
         //criando funcionaios
-        Funcionarios usuario0 = new Funcionarios("super", null, null, 0, null, null, "Super Usuario", "admin");                                               
+        Funcionarios usuario1 = new Funcionarios("Victo", "64857945948", "9923683049", 34, "Rua Santa Maria c400", "M", "Segurança", "0123 49302 3222", 1500.00);                                               
+        Funcionarios usuario2 = new Funcionarios("Ana", "949347567023", "9891447839", 37, "Rua das Flores c1025", "F", "Supervisora", "0343 64897 7896", 2500.49);
+        Funcionarios usuario3 = new Funcionarios("Clara", "40659962730", "9881939485", 21, "Rua São Jose c254", "F", "Secretaria", "9643 46845 5792", 2124.99);
+        
         
          //criar clientes
         Cliente cliente1 = new Cliente("Pedro", "605244334", "9988123454", 37, "M");
@@ -41,7 +44,9 @@ public class Banco {
 
          
         //Adiciona Elementos na lista
-        usuario.add(usuario0);
+        usuario.add(usuario1);
+        usuario.add(usuario2);
+        usuario.add(usuario3);
         
         
         cliente.add(cliente1);
@@ -60,8 +65,12 @@ public class Banco {
     
         
     }
-    public void BancoInicial(){
-     
+    public static void BancoInicial(){
+        usuariosuper = new ArrayList<>();
+
+        Funcionarios usuario0 = new Funcionarios("super", null, null, 0, null, null, "Super Usuario", "admin"); 
+        
+        usuariosuper.add(usuario0);
     }
     
 }

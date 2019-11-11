@@ -30,6 +30,7 @@ public class ControleFuncionario {
 
     public void novo() {
         helper.limparTela();
+        atualizaTabela();
     }
 
     public void salvar() {
@@ -42,10 +43,21 @@ public class ControleFuncionario {
         helper.limparTela();
     }
 
-    public void deletarFuncionario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void buscarFuncionario() {
+        //pegar os dados da tela
+        Funcionarios funcionario = helper.pesquisarFuncionario();
+        if(funcionario.getCargo() != null){
+        helper.mostrarFuncionarioTabela(funcionario);
+        }
     }
 
+    public void deletarFuncionario() {
+        Funcionarios funcionario = helper.pesquisarFuncionario();
+        new FuncionarioDAO().deletar(funcionario);
+        atualizaTabela();
+        helper.limparTela();
+        
+    }
    
 
     

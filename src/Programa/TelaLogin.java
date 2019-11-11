@@ -27,7 +27,7 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
         //iniciar class de controle
         controle = new ControleLogin(this);
-        Banco.inicia();
+        iniciarBanco();
     }
 
     /**
@@ -195,7 +195,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public void entrar(){
         this.controle.entradadosistema();
     }
-    
+   
     public void exibeMensagem(String mensagem) {
      JOptionPane.showMessageDialog(this, mensagem);
     }
@@ -214,6 +214,15 @@ public class TelaLogin extends javax.swing.JFrame {
 
     public void setjTextUsuario(JTextField jTextUsuario) {
         this.jTextUsuario = jTextUsuario;
+    }
+
+    private void iniciarBanco() {
+        Banco.BancoInicial();
+        int aux = 0;
+        if(aux<= 0){
+            Banco.inicia();
+        }
+        aux++;
     }
     
 }

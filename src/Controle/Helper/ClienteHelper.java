@@ -63,7 +63,7 @@ public class ClienteHelper implements Helper{
        String cpf = view.getjTextFieldPesquisarClienteCPF().getText();
        String nome = view.getjTextFieldPesquisarClienteNome().getText();
        //salvar em um objeto
-       Cliente cliente = new Cliente(nome, cpf, "", 0);
+       Cliente cliente = new Cliente(nome, cpf, null, 0);
        ArrayList<Cliente> clientes = new ClienteDAO().selectAll();
        //comparar e retornar o cliente
        cliente = compararClientes(clientes , cliente);
@@ -72,11 +72,11 @@ public class ClienteHelper implements Helper{
     
     private Cliente compararClientes(ArrayList<Cliente> clientes, Cliente cliente) {
         for (Cliente cliente1 : clientes) {
-            if((view.getjTextFieldPesquisarClienteNome().getText() == null ? cliente1.getNome() == null : view.getjTextFieldPesquisarClienteNome().getText().equals(cliente1.getNome())) || 
-                    (view.getjTextFieldPesquisarClienteCPF().getText() == null ? cliente1.getCpf() == null : view.getjTextFieldPesquisarClienteCPF().getText().equals(cliente1.getCpf()))){
+if((view.getjTextFieldPesquisarClienteNome().getText() == null ? cliente1.getNome() == null : view.getjTextFieldPesquisarClienteNome().getText().equals(cliente1.getNome())) || 
+(view.getjTextFieldPesquisarClienteCPF().getText() == null ? cliente1.getCpf() == null : view.getjTextFieldPesquisarClienteCPF().getText().equals(cliente1.getCpf()))){
             return cliente1;
             }}
-            view.exibeMensagem("Dados incoerentes");
+            view.exibeMensagem("Cliente não encontrado");
         return cliente;      
         }
    
